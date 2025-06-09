@@ -29,6 +29,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
 
+
 # Add tests
 enable_testing()
 
@@ -38,6 +39,12 @@ add_executable(tests_runner ${TEST_SOURCES})
 
 target_include_directories(tests_runner PRIVATE include)
 
-target_link_libraries(tests_runner gtest_main)
+target_include_directories(tests_runner
+    PRIVATE
+        ${googletest_SOURCE_DIR}/googletest/include
+)
+
+
+target_link_libraries(tests_runner PRIVATE gtest_main)
 
 add_test(NAME all_tests COMMAND tests_runner)
