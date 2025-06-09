@@ -1,4 +1,8 @@
-# C++ Project Template 
+# Gitfix
+
+This tool acts as a **smart wrapper around `git`** to automatically correct typos in git subcommands. When a user misspells a git subcommand (e.g., `git chekout`), the tool identifies the intended command (`checkout`) and executes it seamlessly. User input is not modified, and the tool only corrects the command if it recognizes a typo.
+
+
 
 A modern C++ project template with:
 
