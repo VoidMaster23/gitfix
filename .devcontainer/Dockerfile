@@ -32,6 +32,15 @@ RUN cd /usr/src/googletest \
     && cp lib/*.a /usr/lib/ \
     && ldconfig
 
+# Add Ubuntu Toolchain PPA and install GCC-13 and G++-13
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+    apt-get update && \
+    apt-get install -y gcc-13 g++-13 && \
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100 && \
+    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+
 WORKDIR /workspace
 
 COPY . .
