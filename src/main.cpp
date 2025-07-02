@@ -1,8 +1,10 @@
 #include <algorithm>
 #include <chrono>
 #include <iostream>
+#include <format>
 #include <string>
 #include <tuple>
+#include <cstdlib>
 
 #include "commands_list.h"
 #include "matrix.h"
@@ -92,5 +94,8 @@ int main(int argc, char* argv[]) {
   std::cout << "result is " << most_similar_command << " took "
             << duration.count() << "us" << std::endl
             << "args are: " << command_arguments << std::endl;
+  
+  std::system(std::format("git {} {}", most_similar_command, command_arguments).c_str());
+  
   return 0;
 }
