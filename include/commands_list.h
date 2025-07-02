@@ -186,4 +186,20 @@
 
         };
     
+    // Some common flags that need quotes
+    constexpr std::array<std::string_view, 12> flags_with_quotes =  {	"-m",
+	"--message",
+	"-F",
+	"--file",
+	"--author",
+	"--date",
+	"--grep",
+	"--committer",
+	"--since",
+	"--until",
+	"--repo",
+	"--receive-pack",
+
+        }; 
+    
     
