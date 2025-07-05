@@ -9,7 +9,7 @@
 #include "commands_list.h"
 #include "matrix.h"
 
-int calculate_levenshtein_distnce(const std::string &input_string,
+int calculate_levenshtein_distance(const std::string &input_string,
                                   const std::string_view &target_string)
 {
   Matrix2d d(input_string.size() + 1, target_string.size() + 1);
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     // if (abs(command.size() - command_entered.size()) > 2) {
     //     continue;
     // }
-    int result = calculate_levenshtein_distnce(command_entered, command);
+    int result = calculate_levenshtein_distance(command_entered, command);
     if (result < min_dist)
     {
       min_dist = result;
