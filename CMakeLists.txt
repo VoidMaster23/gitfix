@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(gitfix)
+project(gt)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -8,14 +8,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Main executable sources
 include(sources.cmake)
 
-add_executable(gitfix ${SOURCES})
+add_executable(gt ${SOURCES})
 
 # Public headers
-target_include_directories(gitfix PRIVATE include)
+target_include_directories(gt PRIVATE include)
 
 # Compiler options (optional)
-target_compile_features(gitfix PRIVATE cxx_std_20)
-target_compile_options(gitfix PRIVATE -Wall -Wextra -pedantic)
+target_compile_features(gt PRIVATE cxx_std_20)
+target_compile_options(gt PRIVATE -Wall -Wextra -pedantic)
 
 # Fetch GoogleTest
 include(FetchContent)
